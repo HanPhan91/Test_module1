@@ -13,31 +13,42 @@
     <p id="result"></p>
 
     <script>
-      function main(){
+      function main() {
         let string = document.getElementById("string").value;
-        let result= countChar(string);
-        if (result){
-            document.getElementById('result').innerText= ` Số nguyên âm xuất hiện trong chuỗi là: ${result}`;
-        }
-        else{
-            document.getElementById('result').innerText= "Không có số nguyên âm xuất hiện trong chuỗi";
+        let result = countChar(string);
+        if (string == '') {
+          alert("Yêu cầu nhập vào chuỗi");
+        } else {
+          if (result) {
+            document.getElementById(
+              "result"
+            ).innerText = ` Số nguyên âm xuất hiện trong chuỗi là: ${result}`;
+          } else {
+            document.getElementById("result").innerText =
+              "Không có số nguyên âm xuất hiện trong chuỗi";
+          }
         }
       }
       function countChar(string) {
         let count = 0;
-        let arrChar= Array.from(string);
+        let arrChar = Array.from(string);
         arrChar.forEach(function (value, index) {
-          if (value == "a" || value == "o" || value == "e" || value == "u" || value == "i") {
+          if (
+            value == "a" ||
+            value == "o" ||
+            value == "e" ||
+            value == "u" ||
+            value == "i"
+          ) {
             count += 1;
           }
         });
-      if (count != 0) {
-        return count;
-      } 
-      else {
-        return false;
+        if (count != 0) {
+          return count;
+        } else {
+          return false;
+        }
       }
-    }
     </script>
   </body>
 </html>

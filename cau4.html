@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu 4</title>
+</head>
+<body>
+    <button onclick="main1()">Gọi objAnimal1</button>
+    <p id="result1"></p>
+    <button onclick="main2()">Tạo đối tượng objAnimal2 mới và đổi tên thành "Mouse"</button>
+    <p id="result2"></p>
+    <button onclick="main3()">Tạo đối tượng objAnimal2 mới và đổi tên thành "Mouse"</button>
+    <p id="result3"></p>
+
+
+    <script>
+        class Animal{
+            constructor(name, weight){
+                this.name=name;
+                this.weight= weight;
+            }
+            setName(string){
+                this.name = string;
+            }
+            setWeight(number){
+                this.weight= number;
+            }
+            getName(){
+                return this.name;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            toString(){
+                return (`Tên: ${this.name} , cân nặng: ${this.weight}kg`);
+            }
+        }
+        function main1(){
+            let objAnimal1= new Animal();
+            objAnimal1.setName("Elephant");
+            objAnimal1.setWeight(45.6);
+            document.getElementById('result1').innerText= objAnimal1.toString();
+        }
+        let objAnimal2;
+        function main2(){
+            objAnimal2= new Animal("Cat", 15);
+            document.getElementById('result2').innerText=` Đối tượng đã tạo mới: ${objAnimal2.toString()}`;
+        }
+        function main3(){
+            objAnimal2.setName("Mouse");
+            document.getElementById('result3').innerText=`Đối tượng đã được đổi tên: ${objAnimal2.toString()}`;
+        }
+    </script>
+</body>
+</html>

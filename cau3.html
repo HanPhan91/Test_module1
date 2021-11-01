@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu 3</title>
+  </head>
+  <body>
+    <span>Nhập vào chuỗi ký tự:</span
+    ><input type="text" name="" id="string" /><br />
+    <button onclick="main()">Đếm số nguyên âm</button>
+    <p id="result"></p>
+
+    <script>
+      function main(){
+        let string = document.getElementById("string").value;
+        let result= countChar(string);
+        if (result){
+            document.getElementById('result').innerText= ` Số nguyên âm xuất hiện trong chuỗi là: ${result}`;
+        }
+        else{
+            document.getElementById('result').innerText= "Không có số nguyên âm xuất hiện trong chuỗi";
+        }
+      }
+      function countChar(string) {
+        let count = 0;
+        let arrChar= Array.from(string);
+        arrChar.forEach(function (value, index) {
+          if (value == "a" || value == "o" || value == "e" || value == "u" || value == "i") {
+            count += 1;
+          }
+        });
+      if (count != 0) {
+        return count;
+      } 
+      else {
+        return false;
+      }
+    }
+    </script>
+  </body>
+</html>
